@@ -8,6 +8,7 @@ Created on Sat Nov 26 20:28:31 2022
 import pandas as pd
 import math
 #This function will get the Term Frequency X Inverse Doc Frequency for an attribute
+#This function doesn't have any usage in the files execution.
 def tfidf(item,doc):
     tf=doc.value_counts()[item]/len(doc);
     #Holds the length
