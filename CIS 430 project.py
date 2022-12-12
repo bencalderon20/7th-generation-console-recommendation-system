@@ -7,13 +7,6 @@ Created on Sat Nov 26 20:28:31 2022
 
 import pandas as pd
 import math
-#This function will get the Term Frequency X Inverse Doc Frequency for an attribute
-#This function doesn't have any usage in the files execution.
-def tfidf(item,doc):
-    tf=doc.value_counts()[item]/len(doc);
-    #Holds the length
-    idf=math.log2(len(doc)/doc.value_counts()[item]);
-    return tf*idf;
 
 #This function will return the sales catergoy that will be focused on
 def switch(demo):
@@ -51,7 +44,7 @@ def recommend(genre,rate,demo,addrate):
           sales.append(df[df['Platform'].str.contains('PS3') & df['Genre'].str.contains(genre)]);  
     #This function will try to find 
     for x in range(len(sales)):
-        s=sales[x][region].median()
+        s=sales[x][region].mean()
         if(s>max):
             max=s
             console=sales[x];
